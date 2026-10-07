@@ -1,109 +1,198 @@
-<a href="https://demo-nextjs-with-supabase.vercel.app/">
-  <img alt="Next.js and Supabase Starter Kit - the fastest way to build apps with Next.js and Supabase" src="https://demo-nextjs-with-supabase.vercel.app/opengraph-image.png">
-  <h1 align="center">Next.js and Supabase Starter Kit</h1>
-</a>
+# ⚡ CreatorForge — The AI Creator & Brand Collaboration Marketplace
 
-<p align="center">
- The fastest way to build apps with Next.js and Supabase
-</p>
+[![Next.js 16](https://img.shields.io/badge/Next.js-16.3.8-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![React 19](https://img.shields.io/badge/React-19-blue?style=for-the-badge&logo=react)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178c6?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
+[![Supabase](https://img.shields.io/badge/Supabase-Auth_%26_DB-3ecf8e?style=for-the-badge&logo=supabase)](https://supabase.com/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38bdf8?style=for-the-badge&logo=tailwindcss)](https://tailwindcss.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-purple?style=for-the-badge)](LICENSE)
 
-<p align="center">
-  <a href="#features"><strong>Features</strong></a> ·
-  <a href="#demo"><strong>Demo</strong></a> ·
-  <a href="#deploy-to-vercel"><strong>Deploy to Vercel</strong></a> ·
-  <a href="#clone-and-run-locally"><strong>Clone and run locally</strong></a> ·
-  <a href="#feedback-and-issues"><strong>Feedback and issues</strong></a>
-  <a href="#more-supabase-examples"><strong>More Examples</strong></a>
-</p>
-<br/>
+**CreatorForge** is a high-performance marketplace platform connecting forward-thinking brands with elite Generative AI video directors, prompt engineers, digital artists, and creative technologists. Built with Next.js 16 (Turbopack), Supabase, and Tailwind CSS in a dark luxury cyberpunk aesthetic.
 
-## Features
+---
 
-- Works across the entire [Next.js](https://nextjs.org) stack
-  - App Router
-  - Pages Router
-  - Proxy
-  - Client
-  - Server
-  - It just works!
-- supabase-ssr. A package to configure Supabase Auth to use cookies
-- Password-based authentication block installed via the [Supabase UI Library](https://supabase.com/ui/docs/nextjs/password-based-auth)
-- Styling with [Tailwind CSS](https://tailwindcss.com)
-- Components with [shadcn/ui](https://ui.shadcn.com/)
-- Optional deployment with [Supabase Vercel Integration and Vercel deploy](#deploy-your-own)
-  - Environment variables automatically assigned to Vercel project
+## 🚀 Key Features
 
-## Demo
+### 1. 🔍 High-Precision Creator Search Engine
+- **Direct Handle & ID Lookup**: Instant discovery by username (`@irfuu_20`, `irfuu_20`), creator UUID (`ce4c4f17-...`), display name, or technical skill.
+- **Priority Relevance Scoring**:
+  - Exact handle / ID match: **+250 points** (guaranteed top rank).
+  - Display name match: **+180 points**.
+  - Prefix / Substring matches: **+120 / +70 points**.
+  - Skills, tools, languages: **+80 / +60 / +50 points**.
+  - Secondary sorting by verified star ratings and completed project counts.
+- **Multi-Source Aggregation**: Seamlessly queries Supabase `profiles`, active accounts, published reels, and completed projects without data loss.
 
-You can view a fully working demo at [demo-nextjs-with-supabase.vercel.app](https://demo-nextjs-with-supabase.vercel.app/).
+### 2. 🎛️ 10-Category Multi-Attribute Filtering (Cross-Category AND / Intra-Category OR)
+Filters creators across 10 specialized categories with strict logical conjunction:
+1. **Skills**: AI content writing, AI image generation, AI video generation, Prompt Engineering, Social Media content creation
+2. **Specialization**: Marketing, Product promotion, Education, Fashion technology, Gaming, YouTube / Instagram
+3. **AI Tools Used**: ChatGPT, Canva AI, Gemini, Runway Gen-3, Midjourney, ComfyUI
+4. **Content Type**: Instagram reel, YouTube video, Blog post, Social media post
+5. **Experience Level**: Beginner, Intermediate, Advance, Pro
+6. **Portfolio Quality**: Previous project, Content quality, Client review, No. of completed projects
+7. **Language**: Tamil, English, Hindi, Malayalam
+8. **Client / Creator Rating**: Overall rating, Client feedback, On-time delivery, Communication score
+9. **Availability**: Available now, Part-time, Full-time, Expected delivery time
+10. **Budget**: Under $500, $500 - $1,500, $1,500 - $3,000, $3,000+, Custom / Milestone
 
-## Deploy to Vercel
+*Rule: Selecting options across multiple categories enforces **AND** logic (e.g. Prompt Engineering **AND** Tamil), while selecting multiple options within the same category enforces **OR** logic.*
 
-Vercel deployment will guide you through creating a Supabase account and project.
+### 3. 💡 Sensible Empty Results Diagnostics & Recovery States
+- **Clean Blank Canvas**: Initial search space remains completely blank prior to querying or filtering.
+- **3-Scenario Contextual Recovery**:
+  - **Query + Filters Mismatch**: Explains zero creators matched the keyword while satisfying all filters; provides one-click buttons to *"Clear Filters & Keep Query"* or *"Keep Filters & Clear Query"*, plus removable filter pill tags.
+  - **Query Only (0 Results)**: Explains no profile was found; offers instant clickable suggestion chips (`@irfuu_20`, `@alex_ai`, `@sarah_gen`, `AI video generation`, `Prompt Engineering`, `Tamil`) and a *"Browse All Creators"* button.
+  - **Filters Only (0 Results)**: Informs that the filter combination is too narrow; displays active filter tags with `×` remove buttons, *"Reset All Filters"*, and *"Browse All Creators"*.
 
-After installation of the Supabase integration, all relevant environment variables will be assigned to the project so the deployment is fully functioning.
+### 4. 📋 Complete Brief Definition Specification
+When hiring or proposing a collaboration, the platform enforces comprehensive creative briefs:
+- **Content Type**: (e.g., Short-form Video Ad, Product Demo, Cinematic Worldbuilding)
+- **Visual Style**: (e.g., Cyberpunk Photorealism, Biomorphic Surrealism, Minimalist Luxury)
+- **Format / Aspect Ratio**: Strict specifications (`16:9 Horizontal`, `9:16 Vertical Reel/TikTok`, `1:1 Square`, `4:5 Portrait`)
+- **Commercial-Use Requirements**: Licensing terms, distribution rights, paid ads usage, and raw asset delivery
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fexamples%2Fwith-supabase&project-name=nextjs-with-supabase&repository-name=nextjs-with-supabase&demo-title=nextjs-with-supabase&demo-description=This+starter+configures+Supabase+Auth+to+use+cookies%2C+making+the+user%27s+session+available+throughout+the+entire+Next.js+app+-+Client+Components%2C+Server+Components%2C+Route+Handlers%2C+Server+Actions+and+Middleware.&demo-url=https%3A%2F%2Fdemo-nextjs-with-supabase.vercel.app%2F&external-id=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fexamples%2Fwith-supabase&demo-image=https%3A%2F%2Fdemo-nextjs-with-supabase.vercel.app%2Fopengraph-image.png)
+### 5. 🤝 Two-Way Real-Time Collaboration Lifecycle
+- **Hire Creator Workflow**: Brands can trigger the Hire modal directly from creator profile headers or specific portfolio cards (pre-filling *"Hire for similar project"*).
+- **Creator Notification Feed**: Creators receive real-time notifications with brand profile summaries, campaign deliverables, and budget snapshots.
+- **Interactive Decision**: Creators can **Accept** or **Decline** directly inside the notification dropdown.
+- **Brand Feedback Alerts**: Brands immediately receive a follow-up notification when an offer is accepted or declined.
 
-The above will also clone the Starter kit to your GitHub, you can clone that locally and develop locally.
+### 6. 📊 Dual-Priority Ratings Engine
+- **Priority 1 (Brand Collaborations)**: Verified star rating (1.0–5.0★) awarded by brands upon completed client deliverables.
+- **Priority 2 (Community Reel Feed)**: Public community ratings from brands watching creator video feeds.
+- **Combined Overall Rating**: Mathematically balanced composite score prominently displayed on all search cards and profile headers.
 
-If you wish to just develop locally and not deploy to Vercel, [follow the steps below](#clone-and-run-locally).
+### 7. 📂 Instagram-Style 3-Column Portfolio Grids
+- **Brand Profile & Creator Profile**:
+  - Column 1: **Projects / Campaigns**
+  - Column 2: **Posts / Reels** (with built-in video players)
+  - Column 3: **Collabs** (past brand/creator partnerships)
+- **Rich Metric Modals**: Tapping any card opens detailed metrics (Reach, Likes, Comments, Engagement, and ROI snapshots).
 
-## Clone and run locally
+### 8. 🎨 Dark Luxury Cyberpunk UX
+- Built on a deep obsidian palette (`#070b14`), bordered by subtle glowing lines (`border-white/10`), neon violet/fuchsia accents, and floating left-side navigation icons.
 
-1. You'll first need a Supabase project which can be made [via the Supabase dashboard](https://database.new)
+---
 
-2. Create a Next.js app using the Supabase Starter template npx command
+## 🛠️ Tech Stack
 
-   ```bash
-   npx create-next-app --example with-supabase with-supabase-app
-   ```
+- **Framework**: [Next.js 16.3.8](https://nextjs.org/) (App Router, Turbopack, Server Actions)
+- **Frontend**: [React 19](https://react.dev/), [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/), [Lucide React](https://lucide.dev/)
+- **Authentication & Backend**: [Supabase](https://supabase.com/) (`@supabase/ssr`, PostgreSQL, Auth)
+- **Deployment**: [Vercel](https://vercel.com/) (Edge CDN, SSL, Automatic Git Deploys)
 
-   ```bash
-   yarn create next-app --example with-supabase with-supabase-app
-   ```
+---
 
-   ```bash
-   pnpm create next-app --example with-supabase with-supabase-app
-   ```
+## 📁 Project Structure
 
-3. Use `cd` to change into the app's directory
+```text
+ai-creator-marketplace/
+├── app/
+│   ├── auth/
+│   │   ├── confirm/route.ts       # Supabase Auth email confirmation handler
+│   │   ├── login/page.tsx         # Role-aware login (Brand vs Creator)
+│   │   └── sign-up/page.tsx       # Onboarding form with auto-login & metadata
+│   ├── brand/
+│   │   ├── creators/
+│   │   │   ├── page.tsx           # Advanced Search & 10-Category Filter Engine
+│   │   │   └── [id]/page.tsx      # Brand view of Creator profile & Hire modal
+│   │   ├── profile/page.tsx       # Brand Profile workspace & campaigns manager
+│   │   └── reels/page.tsx         # Brand video feed with community star rating
+│   ├── creator/
+│   │   ├── brand/[id]/page.tsx    # Creator view of Brand profile
+│   │   └── profile/page.tsx       # Creator Profile workspace, portfolio & filter tags
+│   ├── layout.tsx                 # Root layout with fonts & providers
+│   └── page.tsx                   # Landing page with role selector
+├── components/
+│   ├── brand-navigation.tsx       # Floating Left Nav & Header Nav
+│   ├── notification-bell.tsx      # Real-time notifications with Accept/Decline
+│   └── login-form.tsx             # Shared login component
+├── lib/
+│   ├── marketplace-store.ts       # Unified data store, ratings engine & proposal store
+│   ├── supabase/
+│   │   ├── client.ts              # Browser Supabase client
+│   │   ├── proxy.ts               # Middleware session updater
+│   │   └── server.ts              # Server-side Supabase client
+│   └── utils.ts                   # Tailwind merge helper
+├── .env.example                   # Environment variable template
+└── tailwind.config.ts             # Custom cyberpunk theme definitions
+```
 
-   ```bash
-   cd with-supabase-app
-   ```
+---
 
-4. Rename `.env.example` to `.env.local` and update the following:
+## 🏁 Getting Started Locally
 
-  ```env
-  NEXT_PUBLIC_SUPABASE_URL=[INSERT SUPABASE PROJECT URL]
-  NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=[INSERT SUPABASE PROJECT API PUBLISHABLE OR ANON KEY]
-  ```
-  > [!NOTE]
-  > This example uses `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, which refers to Supabase's new **publishable** key format.
-  > Both legacy **anon** keys and new **publishable** keys can be used with this variable name during the transition period. Supabase's dashboard may show `NEXT_PUBLIC_SUPABASE_ANON_KEY`; its value can be used in this example.
-  > See the [full announcement](https://github.com/orgs/supabase/discussions/29260) for more information.
+### Prerequisites
+- [Node.js](https://nodejs.org/) (version 18.18+ or 20+)
+- [Git](https://git-scm.com/)
+- A free [Supabase](https://supabase.com/) project
 
-  Both `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` can be found in [your Supabase project's API settings](https://supabase.com/dashboard/project/_?showConnect=true)
+### 1. Clone the repository
+```bash
+git clone https://github.com/blackcat7474/CreatorForge-AI-MARKETPLACE.git
+cd CreatorForge-AI-MARKETPLACE
+```
 
-5. You can now run the Next.js local development server:
+### 2. Install dependencies
+```bash
+npm install
+```
 
-   ```bash
-   npm run dev
-   ```
+### 3. Configure Environment Variables
+Copy `.env.example` to `.env.local`:
+```bash
+cp .env.example .env.local
+```
 
-   The starter kit should now be running on [localhost:3000](http://localhost:3000/).
+Add your Supabase credentials:
+```env
+NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=your-supabase-publishable-key
+```
+*(Supports both `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` and `NEXT_PUBLIC_SUPABASE_ANON_KEY`)*
 
-6. This template comes with the default shadcn/ui style initialized. If you instead want other ui.shadcn styles, delete `components.json` and [re-install shadcn/ui](https://ui.shadcn.com/docs/installation/next)
+### 4. Run the Development Server
+```bash
+npm run dev
+```
 
-> Check out [the docs for Local Development](https://supabase.com/docs/guides/getting-started/local-development) to also run Supabase locally.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Feedback and issues
+---
 
-Please file feedback and issues over on the [Supabase GitHub org](https://github.com/supabase/supabase/issues/new/choose).
+## 🚢 Deploying to Vercel
 
-## More Supabase examples
+CreatorForge is pre-configured for zero-config deployment on Vercel:
 
-- [Next.js Subscription Payments Starter](https://github.com/vercel/nextjs-subscription-payments)
-- [Cookie-based Auth and the Next.js 13 App Router (free course)](https://youtube.com/playlist?list=PL5S4mPUpp4OtMhpnp93EFSo42iQ40XjbF)
-- [Supabase Auth and the Next.js App Router](https://github.com/supabase/supabase/tree/master/examples/auth/nextjs)
+1. Push your repository to GitHub (`main` branch).
+2. Go to [vercel.com/new](https://vercel.com/new) and click **Import** next to `CreatorForge-AI-MARKETPLACE`.
+3. In **Environment Variables**, add:
+   - `NEXT_PUBLIC_SUPABASE_URL`
+   - `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`
+4. Click **Deploy**.
+5. In your [Supabase Dashboard](https://supabase.com/dashboard) under **Authentication ➔ URL Configuration**, add your Vercel URL to **Redirect URLs**:
+   - `https://your-app-name.vercel.app/**`
+   - `https://your-app-name.vercel.app/auth/confirm`
+
+---
+
+## 🧪 Quality Assurance
+
+Run static analysis and production build verification:
+```bash
+# Run ESLint
+npm run lint
+
+# Compile production Next.js build
+npm run build
+```
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+
+Developed with ❤️ by **[Irfan M (@blackcat7474)](https://github.com/blackcat7474)**
