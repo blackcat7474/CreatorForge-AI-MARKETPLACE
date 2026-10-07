@@ -33,13 +33,18 @@ export function LoginForm({
     setError(null);
 
     try {
-      const { error } = await supabase.auth.signInWithPassword({
+      const { error: signInErr } = await supabase.auth.signInWithPassword({
         email,
         password,
       });
-      if (error) throw error;
-      // Update this route to redirect to an authenticated route. The user already has an active session.
-      router.push("/protected");
+      if (signInErr) throw signInErr;
+      const { data: { user } } = await supabase.auth.getUser();
+      const role = user?.user_metadata?.role;
+      if (role === "creator") {
+        router.replace("/creator/profile");
+      } else {
+        router.replace("/brand/profile");
+      }
     } catch (error: unknown) {
       setError(error instanceof Error ? error.message : "An error occurred");
     } finally {
